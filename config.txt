@@ -20,8 +20,13 @@
 "birthday2": {"name": "果果", "birthday": "2000-06-17"},
 # 在一起的日子，格式同上，暂不不支持农历
 "love_date": "2021-08-21",
-# 金句中文，如果设置了，则会显示这里的，如果为空，默认会读取金山的每日金句
-"note_ch": "",
-# 金句英文
-"note_en": ""
+# -*- coding: utf-8 -*-
+import http.client, urllib
+conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
+params = urllib.parse.urlencode({'key':'f9343f97e7964c577995ce119b5ffbc3'})
+headers = {'Content-type':'application/x-www-form-urlencoded'}
+conn.request('POST','/qingshi/index',params,headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode('utf-8'))
 }
