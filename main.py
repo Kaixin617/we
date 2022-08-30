@@ -5,6 +5,7 @@ from datetime import datetime, date
 from zhdate import ZhDate
 import sys
 import os
+import http.client, urllib
 
  
  
@@ -230,7 +231,7 @@ if __name__ == "__main__":
         note_ch, note_en = get_ciba()
     
     # -*- coding: utf-8 -*-
-import http.client, urllib
+
 conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
 params = urllib.parse.urlencode({'key':'你的APIKEY'})
 headers = {'Content-type':'application/x-www-form-urlencoded'}
