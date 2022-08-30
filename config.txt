@@ -1,5 +1,5 @@
 {
-import http.client, urllib
+
 # 公众号配置
 # 公众号appId
 "app_id": "wx4511435741d18056",
@@ -26,11 +26,4 @@ import http.client, urllib
 # 金句英文
 "note_en": ""
 
-conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
-params = urllib.parse.urlencode({'key':'你的APIKEY'})
-headers = {'Content-type':'application/x-www-form-urlencoded'}
-conn.request('POST','/qingshi/index',params,headers)
-res = conn.getresponse()
-data = res.read()
-print(data.decode('utf-8'))
 }
